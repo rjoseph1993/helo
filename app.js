@@ -2,8 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const PORT = process.env.PORT || 8080
-const server = app.listen(8080, "localhost ")
-
+const server = app.listen(8080, "0.0.0.0")
 const io = require('socket.io')(server)
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
